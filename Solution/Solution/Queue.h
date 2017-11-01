@@ -13,13 +13,14 @@ public:
 	void printQueue();
 
 	Queue* getNext();
-	void setNext(Queue);
+	void setNext(Queue*);
 
-	Node *_client;
-	Queue *_next;
+	
 
 private:
 
+	Node *_client;
+	Queue *_next;
 	
 
 

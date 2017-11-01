@@ -1,27 +1,40 @@
 #include "stdafx.h"
 
+
 #include "Queue.h"
+#include <iostream>
+using namespace std;
+
 #pragma once
 
 Queue::Queue()
 {
-	_client = nullptr;
-	_next = nullptr;
+	cout << "Im Here";
+	_client = NULL;
+	_next = NULL;
 }
 
 void Queue::addNode(Node& node)
 {
-	Queue count;
+	Queue* count  = _next;
 	Queue temp;
-	count = (*_next);
 	temp.setNode(&node);
 	
-	while (&count != nullptr)
+	if (count == NULL)
 	{
-		count =	*count.getNext();
+		_next = &temp;
+	}
+	else
+	{
+		while (count != NULL)
+		{
+			count = count->getNext();
+		}
+
+		count->setNext(&temp);
 	}
 
-	count.setNext(temp);
+	
 
 }
 
@@ -35,7 +48,7 @@ Queue* Queue::getNext()
 	return _next;
 }
 
-void Queue::setNext(Queue next)
+void Queue::setNext(Queue* next)
 {
-	*_next = next;
+	_next = next;
 }

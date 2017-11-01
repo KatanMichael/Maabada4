@@ -4,7 +4,7 @@ class Node
 public:
 	Node();
 	Node(char*,int);
-	~Node();
+	
 
 	int getMoney();
 	char* getName();

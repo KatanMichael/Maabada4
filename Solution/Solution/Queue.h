@@ -15,10 +15,12 @@ public:
 	Queue* getNext();
 	void setNext(Queue);
 
-private:
-
 	Node *_client;
 	Queue *_next;
+
+private:
+
+	
 
 
 

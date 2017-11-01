@@ -15,9 +15,6 @@ Node::Node(char * name, int money)
 	_money = money;
 }
 
-Node::~Node()
-{
-}
 
 int Node::getMoney()
 {

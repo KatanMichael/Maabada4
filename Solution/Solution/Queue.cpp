@@ -11,18 +11,18 @@ Queue::Queue()
 
 void Queue::addNode(Node& node)
 {
-	Queue *count = _next;
+	Queue count;
 	Queue temp;
+	count = (*_next);
 	temp.setNode(&node);
 	
-
-	while (count != nullptr)
+	while (&count != nullptr)
 	{
-		count->setNext((*_next));
-
+		count =	*count.getNext();
 	}
 
-	count->setNext(temp);
+	count.setNext(temp);
+
 }
 
 void Queue::setNode(Node* node)

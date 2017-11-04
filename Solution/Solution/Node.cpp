@@ -18,17 +18,17 @@ Node::Node(char * name, int money)
 
 int Node::getMoney()
 {
-	return _money;
+	return this->_money;
 }
 
 char* Node::getName()
 {
-	return _name;
+	return this->_name;
 }
 
 int Node::getId()
 {
-	return _id;
+	return this->_id;
 }
 
 void Node::setMoney(int money)

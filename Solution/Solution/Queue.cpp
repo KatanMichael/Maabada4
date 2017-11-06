@@ -26,7 +26,7 @@ void Queue::printQueue()
 	temp->topNode()->printNode();
 }
 
-void Queue::addNode(Node& node)
+Queue* Queue::addNode(Node& node)
 {
 	Queue* temp = this;
 	Queue* newQueue = new Queue[1];
@@ -56,6 +56,7 @@ void Queue::addNode(Node& node)
 		}
 	}
 
+	return this;
 
 }
 

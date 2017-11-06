@@ -5,7 +5,7 @@ class Queue
 public:
 	Queue();
 	
-	void addNode(Node&);
+	Queue* addNode(Node&);
 	Node* getNode();
 	Node* topNode();
 	void setNode(Node* node);

@@ -15,22 +15,7 @@ Queue::Queue()
 
 void Queue::addNode(Node &node)
 {
-	Queue* count  = this;
-	Queue temp;
-	setNode(&node);
-	
-	if (count != NULL)
-	{
-		cout << count->topNode()->getName() << endl;
-	}
-	
-		while (count->getNext() != NULL)
-		{
-			count = count->getNext();
-			cout << count->topNode()->getName() << endl;
-		}
 
-		count->setNext(&temp);
 	
 }
 

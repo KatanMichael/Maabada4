@@ -29,11 +29,14 @@ void Queue::printQueue()
 Queue* Queue::addNode(Node& node)
 {
 	Queue* temp = this;
-	Queue* newQueue = new Queue[1];
+	Queue* newQueue = new Queue;
 	newQueue->_client = &node;
 
+	
+	
 	if (temp->_client == nullptr)
 	{
+		
 		this->_client = &node;
 //		cout << "1" << endl;
 	}
@@ -64,10 +67,9 @@ Node * Queue::getNode()
 {
 	Node* temp = this->topNode();
 
-	this->_next = this->_next->getNext();
-
-	cout << "Node Removed";
 	
+
+	cout << "Node Removed" << endl << endl;
 	return temp;
 
 }

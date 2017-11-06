@@ -9,14 +9,54 @@ using namespace std;
 Queue::Queue()
 {
 	//cout << "Im Here"<<endl;
-	_client = NULL;
-	_next = NULL;
+	_client = nullptr;
+	_next = nullptr;
 }
 
-void Queue::addNode(Node &node)
+void Queue::printQueue()
 {
+	Queue* temp = this;
 
-	
+	while (temp->getNext() != nullptr)
+	{
+		temp->topNode()->printNode();
+		temp = temp->getNext();
+	}
+
+	temp->topNode()->printNode();
+}
+
+void Queue::addNode(Node& node)
+{
+	Queue* temp = this;
+	Queue* newQueue = new Queue[1];
+	newQueue->_client = &node;
+
+	if (temp->_client == nullptr)
+	{
+		this->_client = &node;
+//		cout << "1" << endl;
+	}
+	else
+	{
+		if (temp->getNext() == nullptr)
+		{
+			temp->_next = newQueue;
+//			cout << "2" << endl;
+		}
+		else
+		{
+			while (temp->getNext() != nullptr)
+			{
+				temp = temp->getNext();
+	//			cout  << "In While" << endl;
+			}
+			temp->_next = newQueue;
+//			cout << "3" << endl;
+		}
+	}
+
+
 }
 
 Node * Queue::getNode()
@@ -49,26 +89,9 @@ void Queue::setNext(Queue* next)
 	_next = next;
 }
 
-void Queue::printQueue()
-{
-	Queue* count = this;
-	Node* temp;
-	if (count != NULL)
-	{
-		while (count->getNext() != NULL)
-		{
-			temp = count->topNode();
-			if (temp == NULL)
-			{
-				cout << "IM NULL";
-			}
-		
-			count = count->getNext();
-		}
-	}
-}
+
 
 Node* Queue::topNode()
 {
-	return _client;
+	return this->_client;
 }

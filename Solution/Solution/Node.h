@@ -10,13 +10,14 @@ public:
 	char* getName();
 	int getId();
 	
-	void setMoney(int);
-	void setName(char*);
-	void setId(int);
+	Node* setMoney(int);
+	Node* setName(char*);
+	Node* setId(int);
 
 	void printNode();
 
 private:
+
 	int _id;
 	int _money;
 	char* _name;

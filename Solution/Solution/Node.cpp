@@ -11,6 +11,7 @@ Node::Node()
 
 Node::Node(char * name, int money)
 {
+
 	_name = name;
 	_money = money;
 }
@@ -31,19 +32,22 @@ int Node::getId()
 	return this->_id;
 }
 
-void Node::setMoney(int money)
+Node* Node::setMoney(int money)
 {
 	_money = money;
+	return this;
 }
 
-void Node::setName(char* name)
+Node* Node::setName(char* name)
 {
 	_name = name;
+	return this;
 }
 
-void Node::setId(int id)
+Node* Node::setId(int id)
 {
 	_id = id;
+	return this;
 }
 
 void Node::printNode()

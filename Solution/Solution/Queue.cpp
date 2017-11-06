@@ -17,7 +17,8 @@ void Queue::addNode(Node &node)
 {
 	Queue* count  = this;
 	Queue temp;
-	temp.setNode(&node);
+	setNode(&node);
+	
 	if (count != NULL)
 	{
 		cout << count->topNode()->getName() << endl;
@@ -31,6 +32,18 @@ void Queue::addNode(Node &node)
 
 		count->setNext(&temp);
 	
+}
+
+Node * Queue::getNode()
+{
+	Node* temp = this->topNode();
+
+	this->_next = this->_next->getNext();
+
+	cout << "Node Removed";
+	
+	return temp;
+
 }
 
 
@@ -64,7 +77,7 @@ void Queue::printQueue()
 			{
 				cout << "IM NULL";
 			}
-			//cout << "Name: " << count->getNode()->getName() << endl;
+		
 			count = count->getNext();
 		}
 	}

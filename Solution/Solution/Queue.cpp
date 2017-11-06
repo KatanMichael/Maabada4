@@ -8,14 +8,19 @@ using namespace std;
 
 Queue::Queue()
 {
-	//cout << "Im Here"<<endl;
 	_client = nullptr;
 	_next = nullptr;
-}
 
+}
+Queue::Queue(Queue& fake)
+{
+	_client = nullptr;
+	_next = &fake;
+
+}
 void Queue::printQueue()
 {
-	Queue* temp = this;
+	Queue* temp = this->_next;
 
 	while (temp->getNext() != nullptr)
 	{
@@ -28,7 +33,7 @@ void Queue::printQueue()
 
 Queue* Queue::addNode(Node& node)
 {
-	Queue* temp = this;
+	Queue* temp = this->_next;
 	Queue* newQueue = new Queue;
 	newQueue->_client = &node;
 
@@ -45,17 +50,17 @@ Queue* Queue::addNode(Node& node)
 		if (temp->getNext() == nullptr)
 		{
 			temp->_next = newQueue;
-//			cout << "2" << endl;
+	//		cout << "2" << endl;
 		}
 		else
 		{
 			while (temp->getNext() != nullptr)
 			{
 				temp = temp->getNext();
-	//			cout  << "In While" << endl;
+	//		cout  << "In While" << endl;
 			}
 			temp->_next = newQueue;
-//			cout << "3" << endl;
+//		cout << "3" << endl;
 		}
 	}
 

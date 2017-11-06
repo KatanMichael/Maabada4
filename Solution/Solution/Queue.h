@@ -4,6 +4,7 @@ class Queue
 {
 public:
 	Queue();
+	Queue(Queue& fake);
 	
 	Queue* addNode(Node&);
 	Node* getNode();
@@ -18,7 +19,7 @@ public:
 	
 
 private:
-
+	
 	Node *_client;
 	Queue *_next;
 	

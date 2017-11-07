@@ -4,7 +4,7 @@ class Queue
 {
 public:
 	Queue();
-		
+	~Queue();
 	Queue* addNode(Node&);
 	Node* getNode();
 	Node* topNode();

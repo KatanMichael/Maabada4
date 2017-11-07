@@ -8,6 +8,15 @@ Head::Head(Queue *head)
 
 Queue * Head::addNode(Node& node)
 {
+	Queue* temp = new Queue;
+	temp->setNode(&node);
+
+	if (this->_head == nullptr)
+	{
+		this->_head = temp;
+		return this->_head;
+	}
+
 	return (_head->addNode(node));
 }
 
@@ -16,6 +25,7 @@ Node * Head::getNode()
 	Node* temp = _head->getNode();
 	
 	_head = _head->getNext();
+	
 	return temp;
 }
 

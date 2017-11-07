@@ -13,6 +13,8 @@ Queue::Queue()
 
 }
 
+Queue::~Queue() {};
+
 void Queue::printQueue()
 {
 	Queue* temp = this;
@@ -34,7 +36,7 @@ Queue* Queue::addNode(Node& node)
 
 	
 	
-	if (temp->_client == nullptr)
+		if (temp->_client == nullptr)
 	{
 		
 		this->_client = &node;
@@ -68,7 +70,7 @@ Node * Queue::getNode()
 {
 	Node* temp = this->topNode();
 
-	cout << "Node Removed" << endl << endl;
+	cout << "Node " << temp->getName() << " Removed" << endl << endl;
 	return temp;
 
 }

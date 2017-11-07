@@ -12,15 +12,10 @@ Queue::Queue()
 	_next = nullptr;
 
 }
-Queue::Queue(Queue& fake)
-{
-	_client = nullptr;
-	_next = &fake;
 
-}
 void Queue::printQueue()
 {
-	Queue* temp = this->_next;
+	Queue* temp = this;
 
 	while (temp->getNext() != nullptr)
 	{
@@ -33,7 +28,7 @@ void Queue::printQueue()
 
 Queue* Queue::addNode(Node& node)
 {
-	Queue* temp = this->_next;
+	Queue* temp = this;
 	Queue* newQueue = new Queue;
 	newQueue->_client = &node;
 
@@ -64,6 +59,7 @@ Queue* Queue::addNode(Node& node)
 		}
 	}
 
+
 	return this;
 
 }
@@ -71,8 +67,6 @@ Queue* Queue::addNode(Node& node)
 Node * Queue::getNode()
 {
 	Node* temp = this->topNode();
-
-	
 
 	cout << "Node Removed" << endl << endl;
 	return temp;
